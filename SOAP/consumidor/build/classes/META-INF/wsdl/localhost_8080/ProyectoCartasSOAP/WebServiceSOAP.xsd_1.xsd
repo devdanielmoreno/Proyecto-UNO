@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://CartasSOAP/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://CartasSOAP/">
+
+<xs:element name="acabarJoc" type="tns:acabarJoc"/>
+
+<xs:element name="acabarJocResponse" type="tns:acabarJocResponse"/>
+
+<xs:element name="iniciarJoc" type="tns:iniciarJoc"/>
+
+<xs:element name="iniciarJocResponse" type="tns:iniciarJocResponse"/>
+
+<xs:element name="mostrarCartes" type="tns:mostrarCartes"/>
+
+<xs:element name="mostrarCartesResponse" type="tns:mostrarCartesResponse"/>
+
+<xs:element name="moureJugadorPassa" type="tns:moureJugadorPassa"/>
+
+<xs:element name="moureJugadorPassaResponse" type="tns:moureJugadorPassaResponse"/>
+
+<xs:element name="tirarCarta" type="tns:tirarCarta"/>
+
+<xs:element name="tirarCartaResponse" type="tns:tirarCartaResponse"/>
+
+<xs:complexType name="acabarJoc">
+<xs:sequence>
+<xs:element name="codiPartida" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acabarJocResponse">
+<xs:sequence>
+<xs:element name="result" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarCartes">
+<xs:sequence>
+<xs:element name="codiPartida" type="xs:int"/>
+<xs:element name="numJugador" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarCartesResponse">
+<xs:sequence>
+<xs:element name="cartes" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="iniciarJoc">
+<xs:sequence>
+<xs:element name="codiPartida" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="iniciarJocResponse">
+<xs:sequence>
+<xs:element name="result" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moureJugadorPassa">
+<xs:sequence>
+<xs:element name="codiPartida" type="xs:int"/>
+<xs:element name="numJugador" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moureJugadorPassaResponse">
+<xs:sequence>
+<xs:element name="result" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tirarCarta">
+<xs:sequence>
+<xs:element name="codiPartida" type="xs:int"/>
+<xs:element name="carta" type="xs:string" minOccurs="0"/>
+<xs:element name="numJugador" type="xs:int"/>
+<xs:element name="nuevoColor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tirarCartaResponse">
+<xs:sequence>
+<xs:element name="result" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
